@@ -1,0 +1,15 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "sqs:ReceiveMessage"
+      ],
+      "Effect": "Allow",
+      "Principal": "*",
+      "Resource": "*"
+    }
+  ]
+}
+
+
+## Changed the security group to add https and source only from lambda

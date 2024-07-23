@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Id": "key-default-1",
+  "Statement": [
+    {
+      "Sid": "DO NOT Modify, use the JAM CHALLENGE SECTION below for your tests. Allow administration of the key.",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::709658808394:root"
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DO NOT Modify, use the JAM CHALLENGE SECTION below for your tests. Allow use of the key.",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::709658808394:role/LabStack-prewarm-2128f680-283a-44-SecretsLambdaRole-J2LdLdX2BVfH"
+      },
+      "Action": [
+        "kms:*crypt",
+        "kms:GenerateDataKey*",
+        "kms:Describe*",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "JAM CHALLENGE SECTION - use for your tests.",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::709658808394:role/LabStack-prewarm-2128f680-283a--ValidatorLambdaRole-cbdEffUi3IRA"
+      },
+      "Action": [
+        "kms:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
